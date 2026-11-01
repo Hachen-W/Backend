@@ -1,0 +1,9 @@
+========== удаление вопроса с тремя вариантами ==========
+BEGIN (implicit)
+SELECT questions.id, questions.survey_id, questions.question_type, questions.position, questions.required, questions.body 
+FROM questions 
+WHERE questions.id = $1::UUID
+DELETE FROM questions WHERE questions.id = $1::UUID
+COMMIT
+========== конец ==========
+вариантов ответа осталось: 0
